@@ -1,7 +1,7 @@
 <% provide(:title, 'SIGN UP') %>
 
 <div class="main">
-  <section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
+  <section class="module bg-dark-30" data-background="assets/images/images/section-4.jpg">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -15,28 +15,25 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-5">
-        <h4 class="font-alt">Register</h4>
+        <h4 class="font-alt">Sign Up</h4>
         <hr class="divider-w mb-10">
           <form class="form">
             <% resource = User.new unless resource %>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <div class="form-group">
-                  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "NAME" %>
+                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "NAME" %>
               </div>
             <div class="form-group">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "EMAIL" %>
             </div>
             <div class="form-group">
-                <% if @minimum_password_length %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "PASSWORD" %><br />
+              <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "PASSWORD" %>
+              <% end %>
             </div>
             <div class="field">
               <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password_confirmation" %>
-            </div>
-            <div class="form-group">
-              <input class="form-control" id="re-password" type="password" name="re-password" placeholder="Re-enter Password"/>
             </div>
             <div class="form-group">
                 <%= f.submit "Sign up", class: "btn btn-block btn-round btn-b" %>
@@ -49,7 +46,7 @@
       </div>
     </div>
   </section>
-
+  
   <div class="module-small bg-dark">
     <div class="container">
       <div class="row">
@@ -90,14 +87,14 @@
             <h5 class="widget-title font-alt">Popular Posts</h5>
             <ul class="widget-posts">
               <li class="clearfix">
-                <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-1.jpg" alt="Post Thumbnail"/></a></div>
+                <div class="widget-posts-image"><a href="#"><%= image_tag 'images/rp-1.jpg', alt: "Post Thumbnail" %></a></div>
                 <div class="widget-posts-body">
                   <div class="widget-posts-title"><a href="#">Designer Desk Essentials</a></div>
                   <div class="widget-posts-meta">23 january</div>
                 </div>
               </li>
               <li class="clearfix">
-                <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-2.jpg" alt="Post Thumbnail"/></a></div>
+                <div class="widget-posts-image"><a href="#"><%= image_tag 'images/rp-2.jpg', alt: "Post Thumbnail" %></a></div>
                 <div class="widget-posts-body">
                   <div class="widget-posts-title"><a href="#">Realistic Business Card Mockup</a></div>
                   <div class="widget-posts-meta">15 February</div>
