@@ -2,22 +2,15 @@
 <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">YEApp</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><%= link_to "YEApp", root_path, class: "navbar-brand" %>
     </div>
     <!-- header-Home -->
     <div class="collapse navbar-collapse" id="custom-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
+        <li class="dropdown"><%= link_to "Home", root_path, class: "dropdown-toggle", data: {toggle: "dropdown"} %>
           <ul class="dropdown-menu">
-            <li><a href="index_mp_fullscreen_video_background.html">Default</a></li>
-            <li><a href="index_op_fullscreen_gradient_overlay.html">One Page</a></li>
-            <li><a href="index_agency.html">Agency</a></li>
-            <li><a href="index_portfolio.html">Portfolio</a></li>
-            <li><a href="index_restaurant.html">Restaurant</a></li>
-            <li><a href="index_finance.html">Finance</a></li>
-            <li><a href="index_landing.html">Landing Page</a></li>
-            <li><a href="index_photography.html">Photography</a></li>
-            <li><a href="index_shop.html">Shop</a></li>
+            <li><a href="index_mp_fullscreen_video_background.html.erb">Default</a></li>
+            <li><a href="index_op_fullscreen_gradient_overlay.html.erb">One Page</a></li>
           </ul>
         </li>
 
@@ -27,8 +20,8 @@
           <ul class="dropdown-menu" role="menu">
             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">My Page</a>
               <ul class="dropdown-menu">
-                <li><a href="portfolio_boxed_col_2.html">Profile</a></li>
-                <li><a href="portfolio_boxed_col_3.html">3 Columns</a></li>
+                <li><%= link_to "Profile", user_path(user) %></li>
+                <li><a href="portfolio_boxed_col_3.html.erb">3 Columns</a></li>
               </ul>
             </li>
             <li class="dropdown"><%= link_to 'Change User Information', edit_user_registration_path %></li>
