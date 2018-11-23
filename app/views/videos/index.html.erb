@@ -1,0 +1,32 @@
+<% provide(:title, 'HOME') %>
+
+<div class="main">
+<section class="home-section bg-dark-60 portfolio-page-header parallax-bg" id="home" data-background="assets/images/images/portfolio/portfolio_header_bg.jpg">
+  <div class="titan-caption">
+    <div class="caption-content">
+      <div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>
+      <div class="font-alt mb-40 titan-title-size-4">YEApp</div><%= link_to "Our Works", "#portfolio", class: "section-scroll btn btn-border-w btn-round" %>
+    </div>
+  </div>
+</section>
+
+
+<div class="main">
+  <div class = "card-deck">
+    <%= @video.each do |video| %>
+    <div class = "card">
+      <div class = "card-heder">
+        video.name
+      </div>
+      <div class = "card-body" >
+        video.video_id
+        <p class = "card-text">video.comment</p>
+      </div>
+      <div class = "card-footer">
+        <%= link_to  %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>

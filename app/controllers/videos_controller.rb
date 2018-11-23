@@ -2,6 +2,9 @@ class VideosController < ApplicationController
 
   skip_before_action :authenticate_user!
 
+  def index
+    @video = Video.all
+  end
   def new
     @video = Video.new
   end
@@ -11,7 +14,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(id: params[:id]) 
+    @video = Video.find(id: params[:id])
   end
 
   def create

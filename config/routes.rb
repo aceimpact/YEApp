@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :videos
 
-  root 'users#index'
+  root 'videos#index'
 end
