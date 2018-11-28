@@ -6,7 +6,6 @@ skip_before_action :authenticate_user!
   end
 
   def show
-
   end
 
   def update
@@ -19,7 +18,7 @@ skip_before_action :authenticate_user!
 
   def destroy
     @user = User.find!(id: params[:id])
-    @user.destroy
+    @user.destroy!
     redirect_to root_url
   end
 

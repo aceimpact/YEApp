@@ -17,25 +17,27 @@
 
     -->
     <!-- Default stylesheets-->
-    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
     <!-- Template specific stylesheets-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="assets/lib/animate.css/animate.css" rel="stylesheet">
-    <link href="assets/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/lib/et-line-font/et-line-font.css" rel="stylesheet">
-    <link href="assets/lib/flexslider/flexslider.css" rel="stylesheet">
-    <link href="assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="assets/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
-    <link href="assets/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Volkhov:400i" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" %>
+    <%= stylesheet_link_tag "animate.css" %>
+    <%= stylesheet_link_tag "font-awesome.min.css" %>
+    <%= stylesheet_link_tag "et-line-font.css" %>
+    <%= stylesheet_link_tag "flexslider.css" %>
+    <%= stylesheet_link_tag "owl.carousel.min.css" %>
+    <%= stylesheet_link_tag "owl.theme.default.min.css" %>
+    <%= stylesheet_link_tag "magnific-popup.css" %>
+    <%= stylesheet_link_tag "simpletextrotator.css" %>
     <!-- Main stylesheet and color file-->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
+    <%= stylesheet_link_tag "style.css" %>
+    <%= stylesheet_link_tag "default.css", :id => "color-scheme"%>
   </head>
 
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <p class = "notice"><%= notice %></p>
+    <p class = "alert"><%= alert %></p>
     <main>
       <div class="page-loader">
         <div class="loader">Loading...</div>
@@ -53,18 +55,18 @@
     JavaScripts
     =============================================
     -->
-    <script src="assets/lib/jquery/dist/jquery.js"></script>
-    <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/lib/wow/dist/wow.js"></script>
-    <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="assets/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="assets/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="assets/lib/smoothscroll.js"></script>
-    <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <%= javascript_include_tag "jquery.js" %>
+    <%= javascript_include_tag "bootstrap.min.js" %>
+    <%= javascript_include_tag "wow.js" %>
+    <%= javascript_include_tag "jquery.mb.YTPlayer.js" %>
+    <%= javascript_include_tag "isotope.pkgd.js" %>
+    <%= javascript_include_tag "imagesloaded.pkgd.js" %>
+    <%= javascript_include_tag "jquery.flexslider.js" %>
+    <%= javascript_include_tag "owl.carousel.min.js" %>
+    <%= javascript_include_tag "smoothscroll.js" %>
+    <%= javascript_include_tag "jquery.magnific-popup.js" %>
+    <%= javascript_include_tag "jquery.simple-text-rotator.min.js" %>
+    <%= javascript_include_tag "plugins.js" %>
+    <%= javascript_include_tag "main.js" %>
   </body>
 </html>
