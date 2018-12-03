@@ -14,12 +14,8 @@
         <!-- header-User -->
         <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">User</a>
           <ul class="dropdown-menu" role="menu">
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">My Page</a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile" %></li>
-                <li><%= link_to "Fovorite" %></li>
-              </ul>
-            </li>
+            <li class="dropdown"><%= link_to "My Page", user_path(current_user) %></li>
+            <li class="dropdown"><%= link_to "Fovorite" %></li>
             <li class="dropdown"><%= link_to 'Post', new_video_path %></li>
             <li class="dropdown"><%= link_to 'Change User Information', edit_user_registration_path %></li>
             <li class="dropdown"><%= link_to "Log Out", users_sign_out_path, method: :delete %></li>

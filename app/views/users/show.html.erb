@@ -1,7 +1,7 @@
 <% provide(:title, "MYPAGE") %>
 
 <div class="main">
-  <section class="module bg-dark-60 service-page-header" data-background="assets/images/images/services_bg.jpg">
+  <section class="module bg-dark-60 service-page-header" data-background="./images/services_bg.jpg">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -11,21 +11,17 @@
     </div>
   </section>
 
-  <div class= "container"
-    <div class = "card-deck">
-
-      <div class = "card">
-        <div class = "card-heder">
-          video.name
-        </div>
-        <div class = "card-body" >
-          video.video_id
-          <p class = "card-text">video.comment</p>
-        </div>
-        <div class = "card-footer">
-          <%= link_to "video.users.name" %>
-        </div>
+  <%= @video.each do |video| %>
+  <section class = "card">
+    <div class = "col-lg-4">
+          <h4><%= video.name %></h4>
+          <div class = "youtube-container">
+            <iframe id="player" type="text/html" src="https://www.youtube.com/watch?v#{video.video_id}"></iframe>
+          </div>
+          <p><%= video.comment %></p>
+          <%= link_to "Edit", edit_video_path(video), class: "btn btn-round btn-primary" %>
+          <%= link_to "Delete", video_path(video), :method => :delete, :confirm => '本当に削除しますか？', class: "btn btn-round btn-danger" %>
       </div>
-
-    </div>
+    </section>
+    <% end %>
 </div>

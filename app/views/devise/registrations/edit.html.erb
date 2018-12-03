@@ -1,7 +1,6 @@
 <% provide(:title, 'Change User Information') %>
 
-<div class="main">
-  <section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
+  <section class="module bg-dark-30" data-background="./section-4.jpg">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -24,15 +23,18 @@
               <%= devise_error_messages! %>
 
               <div class="form-group">
+                <%= f.label :name %><br />
                 <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
               </div>
               <div class="form-group">
+                  <%= f.label :email %><br />
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
               </div>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
             <% end %>
             <div class="form-group">
+              <%= f.label :password %><br />
               <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
               <% if @minimum_password_length %>
                 <br />
@@ -44,11 +46,11 @@
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
             </div>
             <div class="form-group">
-              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= f.label :current_password %> <i>(変更を確認するために現在のパスワードを入力して下さい)</i><br />
               <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
             </div>
             <div class="form-group">
-              <%= f.submit "Update", class: "btn btn-block btn-round btn-b" %>
+              <%= f.submit "Update", class: "btn btn-round btn-b" %>
             </div>
             <% end %>
 
@@ -63,4 +65,3 @@
       </div>
     </div>
   </section>
-  </div>

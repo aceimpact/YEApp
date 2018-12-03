@@ -6,6 +6,8 @@ skip_before_action :authenticate_user!
   end
 
   def show
+    @user = User.find_by!(id: params[:id])
+    @video = @user.videos
   end
 
   def update

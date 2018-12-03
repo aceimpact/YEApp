@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :videos, dependent: :destroy
+  validates :name, :email, :password, presence: true
 end

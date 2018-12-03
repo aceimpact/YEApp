@@ -10,23 +10,13 @@
   </div>
 </section>
 
-
-<div class="main">
-  <div class = "card-deck">
-    <%= @video.each do |video| %>
-    <div class = "card">
-      <div class = "card-heder">
-        video.name
-      </div>
-      <div class = "card-body" >
-        video.video_id
-        <p class = "card-text">video.comment</p>
-      </div>
-      <div class = "card-footer">
-        <%= link_to  %>
-      </div>
-    </div>
-    <% end %>
+<%= @video.each do |video| %>
+<section class = "card">
+  <div class = "col-lg-4">
+    <h4><%= video.name %></h4>
+    <iframe id="player" type="text/html" src="https://www.youtube.com/watch?v#{video.video_id}"></iframe>
+    <p><%= video.comment %></p>
+    <%= link_to "video.users.name" %><br />
   </div>
-</div>
+<% end %>
 </div>

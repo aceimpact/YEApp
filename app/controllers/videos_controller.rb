@@ -5,16 +5,17 @@ class VideosController < ApplicationController
   def index
     @video = Video.all
   end
+
   def new
     @video = Video.new
   end
 
   def edit
-    @video = Video.find(id: params[:id])
+    @video = Video.find(params[:id])
   end
 
   def show
-    @video = Video.find(id: params[:id])
+    @video = Video.find_by!(id: params[:id])
   end
 
   def create
@@ -27,6 +28,7 @@ class VideosController < ApplicationController
   end
 
   def update
+    @video = Video.find(params[:id])
     if @video.update_attributes(video_params)
       redirect_to
     else
@@ -35,12 +37,16 @@ class VideosController < ApplicationController
   end
 
   def destroy
+    @video = Video.find(params[:id])
+    if @video.destroy!
+      redirect_to root_url
+    end
   end
 
 
   private
 
   def video_params
-    params.require(:video).permit(:name, :comment)
+    params.require(:video).permit(:name, :video_id, :comment)
   end
 end
