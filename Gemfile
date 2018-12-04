@@ -13,6 +13,8 @@ gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'kaminari'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

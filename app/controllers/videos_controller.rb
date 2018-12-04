@@ -3,7 +3,7 @@ class VideosController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @video = Video.all
+    @videos = Video.all
   end
 
   def new

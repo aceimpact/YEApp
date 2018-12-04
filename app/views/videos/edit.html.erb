@@ -1,6 +1,6 @@
 <% provide(:title, 'Edit') %>
 
-  <section class="module bg-dark-30" data-background="./section-4.jpg">
+  <section class="module bg-dark-30" >
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -17,7 +17,7 @@
         <h4 class="font-alt">Edit</h4>
         <hr class="divider-w mb-10">
           <form class="form">
-            <%= form_for @video do |f| %>
+            <%= form_for(@video) do |f| %>
               <div class="form-group">
                 <%= f.label :name %><br />
                 <%= f.text_field :name, class: "form-control" %>
@@ -39,4 +39,3 @@
       </div>
     </div>
   </section>
-  

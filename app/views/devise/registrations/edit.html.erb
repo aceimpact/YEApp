@@ -1,6 +1,6 @@
 <% provide(:title, 'Change User Information') %>
 
-  <section class="module bg-dark-30" data-background="./section-4.jpg">
+  <section class="module bg-dark-30">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -24,11 +24,11 @@
 
               <div class="form-group">
                 <%= f.label :name %><br />
-                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", value: "#{current_user.name}" %>
               </div>
               <div class="form-group">
                   <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", value: "#{current_user.email}" %>
               </div>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

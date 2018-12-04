@@ -36,25 +36,17 @@
   </head>
 
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <%= render 'layouts/header' %>
     <main>
       <div class="page-loader">
         <div class="loader">Loading...</div>
       </div>
 
-    <%= render 'layouts/header' %>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
-        <div class="container">
-          <%= value %>
-        </div>
-      </div>
-    <% end %>
-
     <%= yield %>
 
-    <%= render 'layouts/footer' %>
-
   </main>
+
+    <%= render 'layouts/footer' %>
 
     <!--
     JavaScripts

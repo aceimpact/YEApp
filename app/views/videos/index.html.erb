@@ -1,7 +1,6 @@
 <% provide(:title, 'HOME') %>
 
-<div class="main">
-<section class="home-section bg-dark-60 portfolio-page-header parallax-bg" id="home" data-background="./images/portfolio_header_bg.jpg">
+<section class="home-section bg-dark-60 portfolio-page-header parallax-bg" id="home">
   <div class="titan-caption">
     <div class="caption-content">
       <div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>
@@ -10,13 +9,16 @@
   </div>
 </section>
 
-<%= @video.each do |video| %>
-<section class = "card">
-  <div class = "col-lg-4">
-    <h4><%= video.name %></h4>
-    <iframe id="player" type="text/html" src="https://www.youtube.com/watch?v#{video.video_id}"></iframe>
-    <p><%= video.comment %></p>
-    <%= link_to "video.users.name" %><br />
+<div class="index-content">
+  <div class="container">
+    <%= @videos.each do |video| %>
+    <div class="col-lg-4">
+      <div class="card">
+        <h4><%= video.name %></h4>
+        <iframe id="player" type="text/html" src="https://www.youtube.com/watch?v#{video.video_id}"></iframe>
+        <p><%= video.comment %></p>
+        <%= link_to "#{video.user.name}" %><br />
+    </div>
+    <% end %>
   </div>
-<% end %>
 </div>
