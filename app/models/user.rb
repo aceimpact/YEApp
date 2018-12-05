@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   validates :name, {presence: true}
-  validates :email, {presence: true}
-  validates :password, {presence: true}
 
-  mount_uploader :image, ImagesUploader
+  mount_uploader :image, UserProfileImagesUploader
 end

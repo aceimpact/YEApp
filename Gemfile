@@ -15,8 +15,7 @@ gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'google-api-client', '<0.9'
-gem 'optimist'
+gem 'erb2haml'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

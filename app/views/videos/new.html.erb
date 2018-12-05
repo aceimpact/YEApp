@@ -19,7 +19,6 @@
         <h4 class="font-alt">POST</h4>
         <hr class="divider-w mb-10">
         <%= form_for @video do |f| %>
-          <form class="form">
             <div class="form-group">
               <%= f.text_field :name, class: "form-control", placeholder: "NAME" %>
             </div>
@@ -33,7 +32,6 @@
             <div class="form-group">
               <%= f.submit "POST",class: "btn btn-round btn-b" %>
             </div>
-          </form>
         <% end %>
       </div>
     </div>

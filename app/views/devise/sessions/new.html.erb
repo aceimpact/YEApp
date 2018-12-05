@@ -26,7 +26,6 @@
         <h4 class="font-alt">Login</h4>
         <hr class="divider-w mb-10">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <form class="form">
               <div class="form-group">
                 <%= f.text_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "EMAIL" %>
               </div>
@@ -42,7 +41,6 @@
               <div class="form-group">
                 <%= f.submit "Log in", class: "btn btn-round btn-b" %>
               </div>
-          </form>
         <% end %>
         <%= link_to "Sign upはこちら", new_user_registration_path , class: "btn btn-round btn-danger" %>
         <p><%= render "devise/shared/links" %></p>
