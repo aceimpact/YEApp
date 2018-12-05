@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   resources :videos
 
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+
   root 'videos#index'
-
-
 end

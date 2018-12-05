@@ -4,7 +4,11 @@ class User < ApplicationRecord
 
   has_many :videos, dependent: :destroy
 
-  validates :name, :email, :password, presence: true
+  has_many :likes, dependent: :destroy
+
+  validates :name, {presence: true}
+  validates :email, {presence: true}
+  validates :password, {presence: true}
 
   mount_uploader :image, ImagesUploader
 end

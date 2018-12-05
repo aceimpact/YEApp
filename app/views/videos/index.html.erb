@@ -19,6 +19,17 @@
         <p><%= video.comment %></p>
         <%= link_to "#{video.user.name}" %><br />
     </div>
+    <% if Like.find_by(user_id: current_user.id, post_id: video.id) %>
+      <%= link_to("/likes/#{video.id}/destroy", {method: "post"}) do %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+      <% end %>
+    <% else %>
+      <%= link_to("/likes/#{video.id}/create", {method: "post"}) do %>
+        <span class="fa fa-heart like-btn"></span>
+      <% end %>
+    <% end %>
+      <%= @likes_count %>
+    </div>
     <% end %>
   </div>
 </div>
