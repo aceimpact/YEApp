@@ -1,11 +1,10 @@
 class VideosController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before :set_editable_video, only: [:edit, :update, :destroy]
+  before_action :set_editable_video, only: [:edit, :update, :destroy]
 
   def index
     @videos = Video.all
-    @video = Video.find(params[:id])
   end
 
   def new
