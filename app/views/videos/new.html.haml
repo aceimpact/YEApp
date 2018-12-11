@@ -1,0 +1,23 @@
+- provide(:title, 'POST')
+.main
+  %section.module.bg-dark-30{"data-background" => "./images/section-4.jpg"}
+    .container
+      .row
+        .col-sm-6.col-sm-offset-3
+          %h1.module-title.font-alt.mb-0 Post
+  / form部分
+  %section.module
+    .container
+      .row
+        .col-sm-5.col-sm-offset-1.mb-sm-40
+          %h4.font-alt POST
+          %hr.divider-w.mb-10/
+          = form_for @video do |f|
+            .form-group
+              = f.text_field :name, class: "form-control", placeholder: "NAME"
+            .form-group
+              = f.text_field :url, class: "form-control",placeholder: "URL"
+            .form-group
+              = f.text_field :comment, class: "form-control", placeholder: "COMMENT"
+            .form-group
+              = f.submit "POST",class: "btn btn-round btn-b"

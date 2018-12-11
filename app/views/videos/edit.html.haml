@@ -1,0 +1,29 @@
+- provide(:title, 'Edit')
+%section.module.bg-dark-30
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h1.module-title.font-alt.mb-0 Edit
+/ form部分
+%section.module
+  .container
+    .row
+      .col-sm-5
+        %h4.font-alt Edit
+        %hr.divider-w.mb-10/
+        %form.form
+          = form_for(@video) do |f|
+            .form-group
+              = f.label :name
+              %br/
+              = f.text_field :name, class: "form-control"
+            .form-group
+              = f.label :url
+              %br/
+              = f.text_field :video_id, class: "form-control"
+            .form-group
+              = f.label :comment
+              %br/
+              = f.text_field :comment, class: "form-control"
+            .form-group
+              = f.submit "Update", class: "btn btn-round btn-b"

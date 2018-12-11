@@ -1,0 +1,21 @@
+- provide(:title, "MYPAGE")
+%section.module.bg-dark-60.service-page-header
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h2.module-title.font-alt MYPAGE
+%section
+  %div
+    = image_tag current_user.image, :size => "16×16"
+    = current_user.name
+    = current_user.email
+    = link_to 'プロフィール変更', edit_user_registration_path
+= @video.each do |video|
+  %section.card
+    .col-lg-4
+      %h4= video.name
+      .youtube-container
+        %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/\#{video.video_id}", :type => "text/html", :width => "320"}
+      %p= video.comment
+      = link_to "Edit", edit_video_path(video), class: "btn btn-round btn-primary"
+      = link_to "Delete", video_path(video), :method => :delete, :confirm => '本当に削除しますか？', class: "btn btn-round btn-danger"
