@@ -9,7 +9,7 @@ class Video < ApplicationRecord
   before_validation :format_youtube_uuid
 
   def format_youtube_uuid
-    match_data = self.url.match(/https?\:\/\/www\.youtube\.com\/watch\?v=(\w{11})/)
-    self.uuid = match_data[0]
+    match_data = self.url.match(/https?:\/\/www\.youtube\.com\/watch\?v=(\w{11})/)
+    self.uuid = match_data[1]
   end
 end
