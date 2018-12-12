@@ -9,7 +9,7 @@
 .row
   .col-sm-6.col-md-3
     .thumbnail
-      = @video.each do |video|
+      - @video.each do |video|
         %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/#{video.uuid}", :type => "text/html", :width => "320"}
           .caption
             %h3 video.name

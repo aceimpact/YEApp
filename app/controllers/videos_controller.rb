@@ -36,9 +36,8 @@ class VideosController < ApplicationController
   end
 
   def destroy
-    if @video.destroy!
-      redirect_to root_url
-    end
+    @video.destroy!
+    redirect_to root_url
   end
 
 
