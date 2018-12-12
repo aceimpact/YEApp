@@ -1,0 +1,32 @@
+/ header
+%nav.navbar.navbar-custom.navbar-fixed-top.navbar-transparent{:role => "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#custom-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "YEApp", root_path, class: "navbar-brand"
+    / header-Home
+    #custom-collapse.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          = link_to "Home", root_path
+        - if user_signed_in?
+          / header-User
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} User
+            %ul.dropdown-menu{:role => "menu"}
+              %li.dropdown= link_to "My Page", user_path(current_user)
+              %li.dropdown= link_to "Fovorite"
+              %li.dropdown= link_to 'Post', new_video_path
+              %li.dropdown= link_to 'Change User Information', edit_user_registration_path
+              %li.dropdown= link_to "Log Out", users_sign_out_path, method: :delete
+        - else
+          / header-Wellcome
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Wellcome
+            %ul.dropdown-menu
+              %li.dropdown= link_to 'Sign Up', new_user_registration_path
+              %li.dropdown= link_to 'login', new_user_session_path

@@ -1,0 +1,33 @@
+- provide(:title, 'SIGN UP')
+.main
+  %section.module.bg-dark-30{"data-background" => "./images/section-4.jpg"}
+    .container
+      .row
+        .col-sm-6.col-sm-offset-3
+          %h1.module-title.font-alt.mb-0 Sign Up
+  / form部分
+  %section.module
+    .container
+      .row
+        .col-sm-5
+          %h4.font-alt Sign Up
+          %hr.divider-w.mb-10/
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            .form-group
+              = f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "NAME"
+            .form-group
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "EMAIL"
+            .form-group
+              = f.label :image
+              = f.file_field :image, class: "form-control"
+            .form-group
+              = f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "PASSWORD"
+              %br/
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+            .form-group
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "確認のためもう一度入力して下さい"
+            .form-group
+              = f.submit "Sign up", class: "btn btn-round btn-b"
+          = link_to "Loginはこちら", new_user_session_path, class: "btn btn-round btn-danger"

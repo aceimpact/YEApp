@@ -3,4 +3,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :videos, dependent: :destroy
+
+  has_many :likes, dependent: :destroy
+
+  validates :name, {presence: true}
+
+  mount_uploader :image, ImagesUploader
 end

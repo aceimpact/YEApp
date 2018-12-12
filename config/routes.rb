@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:index, :show, :update, :destroy]
 
-  resources :videos
+  resources :videos do
+    resources :likes, :only => [:create, :destroy]
+  end
 
   root 'videos#index'
-
-
 end

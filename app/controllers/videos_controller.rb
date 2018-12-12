@@ -1,20 +1,21 @@
 class VideosController < ApplicationController
 
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_editable_video, only: [:edit, :update, :destroy]
 
   def index
-    @video = Video.all
+    @videos = Video.all
   end
+
   def new
-    @video = Video.new
+    @video = current_user.videos.build
   end
 
   def edit
-    @video = Video.find(id: params[:id])
   end
 
   def show
-    @video = Video.find(id: params[:id])
+    @video = current_user.videos.find(params[:id])
   end
 
   def create
@@ -35,12 +36,19 @@ class VideosController < ApplicationController
   end
 
   def destroy
+    if @video.destroy!
+      redirect_to root_url
+    end
   end
 
 
   private
 
   def video_params
-    params.require(:video).permit(:name, :comment)
+    params.require(:video).permit(:name, :url, :comment)
+  end
+
+  def set_editable_video
+    @video = current_user.videos.find(params[:id])
   end
 end

@@ -12,6 +12,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'kaminari'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'erb2haml'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
