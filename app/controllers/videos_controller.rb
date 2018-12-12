@@ -15,7 +15,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = current_user.videos.find(params[:id])
   end
 
   def create
@@ -45,7 +45,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:name, :video_id, :comment)
+    params.require(:video).permit(:name, :url, :comment)
   end
 
   def set_editable_video

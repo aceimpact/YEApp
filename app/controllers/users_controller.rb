@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
 
-before_action :authenticate_user!
-
   def index
   end
 
   def show
-    @user = User.find_by!(id: params[:id])
+    @user = User.find(params[:id])
     @video = @user.videos
   end
 
@@ -19,7 +17,7 @@ before_action :authenticate_user!
   end
 
   def destroy
-    @user = User.find!(id: params[:id])
+    @user = User.find(params[:id])
     @user.destroy!
     redirect_to root_url
   end

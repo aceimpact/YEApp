@@ -4,4 +4,5 @@ class Video < ApplicationRecord
 
   validates :name, presence: true
 
+  attr_accessor :url
 end
