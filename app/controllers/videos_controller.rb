@@ -9,6 +9,7 @@ class VideosController < ApplicationController
 
   def new
     @video = current_user.videos.build
+    @like = Like.find(params[:id])
   end
 
   def edit

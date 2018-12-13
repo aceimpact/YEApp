@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :users, :only => [:index, :show, :update, :destroy]
+  resources :users, only: [:index, :show, :update, :destroy]
 
   resources :videos do
-    resources :likes, :only => [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 
   root 'videos#index'
