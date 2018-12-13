@@ -6,7 +6,7 @@
       .font-alt.mb-40.titan-title-size-4 YEApp
 .index-content
   .container
-    = @videos.each do |video|
+    - @videos.each do |video|
       .col-lg-4
         .card
           %h4= video.name
