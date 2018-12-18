@@ -1,0 +1,11 @@
+<% @likes.each do |like| %>
+   <% video = Video.find_by(id: like.video_id) %>
+     <div class="posts-index-item">
+       <div class="post-right">
+         <div class="post-user-name">
+           <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+         </div>
+         <%= link_to(post.content, "/posts/#{post.id}") %>
+       </div>
+     </div>
+   <% end %>

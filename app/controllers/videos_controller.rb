@@ -5,18 +5,19 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    @likes = Like.where(video_id: params[:video_id])
   end
 
   def new
     @video = current_user.videos.build
-    @like = Like.find(params[:id])
   end
 
   def edit
   end
 
   def show
-    @video = current_user.videos.find(params[:id])
+    @user = User.find(params[:id])
+    @likes = Like.where(user_id: @user.id)
   end
 
   def create
