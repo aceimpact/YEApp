@@ -5,33 +5,14 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    /
-      Document Title
-      \=============================================
     %title
       YEApp | #{(yield(:title))}
-    = render 'shared/favicon'
-    /
-      Stylesheets
-      \=============================================
-    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
-    / Default stylesheets
-    = stylesheet_link_tag "bootstrap.min.css"
-    / Template specific stylesheets
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload"
+    = javascript_include_tag "application", "data-turbolinks-track" => "reload"
+    = csrf_meta_tags
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700"
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Volkhov:400i"
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
-    = stylesheet_link_tag "animate.css"
-    = stylesheet_link_tag "font-awesome.min.css"
-    = stylesheet_link_tag "et-line-font.css"
-    = stylesheet_link_tag "flexslider.css"
-    = stylesheet_link_tag "owl.carousel.min.css"
-    = stylesheet_link_tag "owl.theme.default.min.css"
-    = stylesheet_link_tag "magnific-popup.css"
-    = stylesheet_link_tag "simpletextrotator.css"
-    / Main stylesheet and color file
-    = stylesheet_link_tag "style.css"
-    = stylesheet_link_tag "default.css", :id => "color-scheme"
   %body{"data-offset" => "60", "data-spy" => "scroll", "data-target" => ".onpage-navigation"}
     = render 'layouts/header'
     %main
@@ -39,19 +20,3 @@
         .loader Loading...
       = yield
     = render 'layouts/footer'
-    /
-      JavaScripts
-      \=============================================
-    = javascript_include_tag "jquery.js"
-    = javascript_include_tag "bootstrap.min.js"
-    = javascript_include_tag "wow.js"
-    = javascript_include_tag "jquery.mb.YTPlayer.js"
-    = javascript_include_tag "isotope.pkgd.js"
-    = javascript_include_tag "imagesloaded.pkgd.js"
-    = javascript_include_tag "jquery.flexslider.js"
-    = javascript_include_tag "owl.carousel.min.js"
-    = javascript_include_tag "smoothscroll.js"
-    = javascript_include_tag "jquery.magnific-popup.js"
-    = javascript_include_tag "jquery.simple-text-rotator.min.js"
-    = javascript_include_tag "plugins.js"
-    = javascript_include_tag "main.js"
