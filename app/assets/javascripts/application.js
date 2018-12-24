@@ -22,6 +22,7 @@
 //= require isotope.pkgd
 //= require jquery.flexslider
 //= require jquery.magnific-popup
+//= require jquery.mb.YTPlayer
 //= require jquery.simple-text-rotator.min
 //= require owl.carousel.min
 //= require plugins

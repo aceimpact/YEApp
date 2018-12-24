@@ -9,10 +9,8 @@
       YEApp | #{(yield(:title))}
     = csrf_meta_tags
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload"
-    = javascript_include_tag "application", "data-turbolinks-track" => "reload"
-    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700"
-    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Volkhov:400i"
-    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+    = javascript_include_tag "application"
+    = render 'layouts/shim'
   %body{"data-offset" => "60", "data-spy" => "scroll", "data-target" => ".onpage-navigation"}
     = render 'layouts/header'
     %main
