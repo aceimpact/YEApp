@@ -17,7 +17,6 @@ module YEApp
 
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
 
-    Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'javascripts')
     Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'stylesheets')
     Rails.application.config.assets.precompile += %w(*.eot *.woff *.woff2 *.ttf *.svg *.otf *.png *.jpg *.gif )

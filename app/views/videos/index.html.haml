@@ -14,4 +14,9 @@
           %p= video.comment
           = link_to "#{video.user.name}"
           %br/
-          = render partial: 'likes/like', locals: { video: video, likes: @likes }
+          - if user_signed_in? && video.like_user(current_user.id)
+            = link_to video_like_path(video_id: video.id, id: @likes), method: :delete, id: "like-button", remote: true do
+              = image_tag("icon_red_heart.png")
+          - else
+            = link_to video_likes_path(video), method: :post, id: "like-button", remote: true do
+              = image_tag("icon_heart.png")
