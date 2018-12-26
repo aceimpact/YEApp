@@ -1,1 +1,1 @@
-$("#like-buttons").html("<%= j(render partial: 'likes/like', locals: { video: video, likes: @likes, like: @like}) %>");
+$("#like-button").html("<%= j(render partial: 'likes/like', locals: { video: @video, videos: @videos, likes: @likes, like: @like }) %>");

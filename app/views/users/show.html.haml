@@ -14,4 +14,4 @@
           %p= video.comment
           %p
             = link_to "Edit", edit_video_path(video), class: "btn btn-round btn-primary"
-            = link_to "Delete", video_path(video), :method => :delete, :confirm => '本当に削除しますか？', class: "btn btn-round btn-danger"
+            = link_to "Delete", video_path(video), :method => :delete, data: { confirm: '削除しますか？' }, class: "btn btn-round btn-danger"
