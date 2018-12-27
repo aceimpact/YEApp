@@ -14,4 +14,4 @@
           %p= video.comment
           = link_to "#{video.user.name}"
           %br/
-          = render partial: 'likes/like', locals: { video: video, likes: @likes }
+          = render partial: 'likes/like', locals: { video: video }
