@@ -1,7 +1,7 @@
 - if user_signed_in?
   - if video.like_user(current_user.id)
-    = link_to video_like_path(video.like_user(current_user.id), video_id: video.id), method: :delete, id: "like-button", remote: true do
+    = link_to video_like_path(video, video.likes.ids), method: :delete, remote: true do
       = image_tag("icon_red_heart.png")
   - else
-    = link_to video_likes_path(video), method: :post, id: "like-button", remote: true do
+    = link_to video_likes_path(video), method: :post, remote: true do
       = image_tag("icon_heart.png")

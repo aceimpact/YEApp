@@ -14,4 +14,5 @@
           %p= video.comment
           = link_to "#{video.user.name}"
           %br/
-          = render partial: 'likes/like', locals: { video: video }
+          .like-button{:class => "like-button-#{video.id}"}
+            = render partial: 'likes/like', locals: { video: video }
