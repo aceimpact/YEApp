@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :videos do
     resources :likes, only: [:create, :destroy]
   end
-
+  
   resources :users, only: [:index, :show, :update, :destroy]
 
   root 'videos#index'
