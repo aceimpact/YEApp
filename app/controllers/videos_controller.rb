@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_editable_video, only: [:edit, :update, :destroy]
 

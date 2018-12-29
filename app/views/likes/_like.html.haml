@@ -1,4 +1,4 @@
-- if user_signed_in?
+- if user_signed_in?  && current_user.id != video.user_id
   - if video.like_user(current_user.id)
     = link_to video_like_path(video, video.likes.ids), method: :delete, remote: true do
       = image_tag("icon_red_heart.png")

@@ -1,9 +1,9 @@
-- provide(:title, "MYPAGE")
-%section.module.bg-dark-60.service-page-header
+- provide(:title, "YOUSERPAGE")
+%section.module.bg-dark-60.portfolio-page-header.parallax-bg
   .container
     .row
       .col-sm-6.col-sm-offset-3
-        %h2.module-title.font-alt #{current_user.name}さんが投稿した動画
+        %h2.module-title.font-alt #{@user.name}さんが投稿した動画
 .index-content
   .container
     - @video.each do |video|
