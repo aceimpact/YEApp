@@ -1,10 +1,10 @@
 class VideosController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_editable_video, only: [:edit, :update, :destroy]
 
   def index
     @videos = Video.all
+    @likes = Like.where(video_id: params[:video_id])
   end
 
   def new
@@ -15,7 +15,8 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = current_user.videos.find(params[:id])
+    @user = User.find(params[:id])
+    @likes = Like.where(user_id: @user.id)
   end
 
   def create

@@ -1,0 +1,16 @@
+- provide(:title, 'favorite')
+%section.module.bg-dark-60.portfolio-page-header.parallax-bg
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h2.module-title.font-alt #{current_user.name}さんのお気に入り動画
+.index-content
+  .container
+  - @likes.each do |like|
+    - video = Video.find_by(id: like.video_id)
+    .col-lg-4
+      .card
+        %h4= video.name
+        %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/#{video.uuid}", :type => "text/html", :width => "320"}
+        %p= video.comment
+        = link_to "#{video.user.name}"

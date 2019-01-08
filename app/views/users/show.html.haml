@@ -1,19 +1,17 @@
-- provide(:title, "MYPAGE")
-%section.module.bg-dark-60.service-page-header
+- provide(:title, "YOUSERPAGE")
+%section.module.bg-dark-60.portfolio-page-header.parallax-bg
   .container
     .row
       .col-sm-6.col-sm-offset-3
-        %h2.module-title.font-alt #{current_user.name}のMYPAGE
-%h3.text-primary 投稿した動画
-/ここが問題点
-.row
-  .col-sm-6.col-md-3
-    .thumbnail
-      - @video.each do |video|
-        %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/#{video.uuid}", :type => "text/html", :width => "320"}
-          .caption
-            %h3 video.name
-            %p video.comment
-            %p
-              = link_to "Edit", edit_video_path(video), class: "btn btn-round btn-primary"
-              = link_to "Delete", video_path(video), :method => :delete, :confirm => '本当に削除しますか？', class: "btn btn-round btn-danger"
+        %h2.module-title.font-alt #{@user.name}さんが投稿した動画
+.index-content
+  .container
+    - @video.each do |video|
+      .col-lg-4
+        .card
+          %h4= video.name
+          %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/#{video.uuid}", :type => "text/html", :width => "320"}
+          %p= video.comment
+          %p
+            = link_to "Edit", edit_video_path(video), class: "btn btn-round btn-primary"
+            = link_to "Delete", video_path(video), :method => :delete, data: { confirm: '削除しますか？' }, class: "btn btn-round btn-danger"

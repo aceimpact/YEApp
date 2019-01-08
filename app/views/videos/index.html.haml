@@ -10,14 +10,9 @@
       .col-lg-4
         .card
           %h4= video.name
-          %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/\#{video.uuid}", :type => "text/html", :width => "320"}
+          %iframe#player{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/#{video.uuid}", :type => "text/html", :width => "320"}
           %p= video.comment
-          = link_to "#{video.user.name}"
+          = link_to "#{video.user.name}", user_path(video.user), :style => "font-size:18px"
           %br/
-          - if user_signed_in?
-            - if Like.find_by(user_id: current_user.id, video_id: @video.id)
-              = link_to video_like_path(video, like), method: :delete do
-                %span.fa.fa-heart.like-btn-unlike
-            - else
-              = link_to video_likes_path(video) do
-                %span.fa.fa-heart.like-btn
+          .like-button{:class => "like-button-#{video.id}"}
+            = render partial: 'likes/like', locals: { video: video }

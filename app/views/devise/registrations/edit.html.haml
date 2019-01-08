@@ -28,21 +28,20 @@
             %div
               Currently waiting confirmation for: #{resource.unconfirmed_email}
           .form-group
-            = f.label :password
+            = f.label :new_password
             %br/
             = f.password_field :password, autocomplete: "new-password", class: "form-control"
             - if @minimum_password_length
-              %br/
               %em
                 = @minimum_password_length
                 characters minimum
           .form-group
-            = f.label :password_confirmation
+            = f.label :new_password_confirmation
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
           .form-group
             = f.label :current_password
-            %span (変更を確認するために現在のパスワードを入力して下さい)
+            %span (現在のパスワードを入力して下さい)
             %br/
             = f.password_field :current_password, autocomplete: "current-password", class: "form-control"
           .form-group
