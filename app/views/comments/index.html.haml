@@ -1,0 +1,12 @@
+- provide(:title, 'コメント一覧')
+%ul.mb-5
+- @video.comments.each do |comment|
+  %li.list-unstyled
+  = comment.user.name
+  %li.list-unstyled
+  &ensp;
+  = comment.content
+  %li.list-unstyled
+  = link_to "編集する", edit_video_comment_path(@video, comment)
+  = link_to "削除する", video_comment_path(@video, comment), method: :delete
+  %hr

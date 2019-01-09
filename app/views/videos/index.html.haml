@@ -17,5 +17,9 @@
           %p= link_to "#{video.user.name}", user_path(video.user), :style => "font-size:18px"
           = video.comment
           %br/
+          = link_to "コメントする", new_video_comment_path(video)
+          - if video.comments.present?
+            = link_to "コメント(#{video.comments.count})", video_comments_path(video)
+          %br/
           .like-button{:class => "like-button-#{video.id}"}
             = render partial: 'likes/like', locals: { video: video }
