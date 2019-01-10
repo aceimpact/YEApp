@@ -23,6 +23,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -32,10 +33,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg', '~> 0.19.0'
+  gem 'pg', '~> 0.18'
   gem 'rails_12factor'
 end
