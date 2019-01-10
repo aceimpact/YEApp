@@ -1,8 +1,12 @@
 - provide(:title, 'コメント')
-%h2 コメント
+%section.module.bg-dark-60.portfolio-page-header.parallax-bg
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h2.module-title.font-alt コメント
 .text-center
   = form_for [@video, @comment]  do |f|
-    = f.label :content, "コメント"
     %br/
-    = f.text_area :content
-    = f.submit "コメントする"
+    = f.text_area :content, size: "80x5"
+    %br/
+    = f.submit "コメントする", class: "btn btn-info"
