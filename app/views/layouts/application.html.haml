@@ -9,6 +9,7 @@
     = csrf_meta_tags
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload"
     = javascript_include_tag "application"
+    = display_meta_tags(default_meta_tags)
     = render 'layouts/shim'
   %body{"data-offset" => "60", "data-spy" => "scroll", "data-target" => ".onpage-navigation"}
     = render 'layouts/header'

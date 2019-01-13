@@ -1,4 +1,5 @@
 - provide(:title, 'HOME')
+- set_meta_tags title: 'YEApp | HOME'
 %section#home.home-section.bg-dark-60.portfolio-page-header.parallax-bg
   .titan-caption
     .caption-content
@@ -19,3 +20,8 @@
           %br/
           .like-button{:class => "like-button-#{video.id}"}
             = render partial: 'likes/like', locals: { video: video }
+.container.icon.text-right
+  = link_to root_path do
+    %i.fa.fa-twitter{"aria-hidden" => "true"}
+  = link_to root_path do
+    %i.fa.fa-facebook{"aria-hidden" => "true"}
