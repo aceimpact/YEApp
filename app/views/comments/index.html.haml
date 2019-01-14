@@ -1,0 +1,19 @@
+- provide(:title, 'コメント一覧')
+%section.module.bg-dark-60.portfolio-page-header.parallax-bg
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h2.module-title.font-alt コメント一覧
+.index-content
+  .container
+    - @video.comments.each do |comment|
+      .col-lg-4
+        .card
+          %h4= comment.user.name
+          %h5
+            &ensp;
+            = comment.content
+          %br/
+          = link_to "編集する", edit_video_comment_path(@video, comment), class: "btn btn-primary"
+          = link_to "削除する", video_comment_path(@video, comment), method: :delete, class: "btn btn-danger"
+          %hr
