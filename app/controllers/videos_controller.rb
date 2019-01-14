@@ -15,8 +15,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @likes = Like.where(user_id: @user.id)
+    @likes = Like.where(user_id: current_user.id)
   end
 
   def create

@@ -1,5 +1,5 @@
 - provide(:title, 'favorite')
-- if @user.likes.present?
+- if current_user.likes.present?
   %section.module.bg-dark-60.portfolio-page-header.parallax-bg
     .container
       .row
