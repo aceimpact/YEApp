@@ -20,5 +20,6 @@
           .like-button{:class => "like-button-#{video.id}"}
             = render partial: 'likes/like', locals: { video: video }
 .container.icon.text-right
-  %i.twitter.fa.fa-twitter{"aria-hidden" => "true"}
-  %i.facebook.fa.fa-facebook{"aria-hidden" => "true"}
+  %a.twitter.fa.fa-twitter{:rel => "nofollow", :target => "_blank"}
+  %a.facebook.fa.fa-facebook{"aria-hidden" => "true"}
+  %a.fa.fa-twitter{:href => "https://twitter.com/share?url=lacation.href", :rel => "nofollow", :target => "_blank"}

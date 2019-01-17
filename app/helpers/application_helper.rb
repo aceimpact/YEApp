@@ -16,17 +16,17 @@ module ApplicationHelper
         title: :title,
         description: :description,
         type: "website",
-        url: request.original_url,
+        url: request.url,
         image: image_url("スクリーンショット.png"),
         site_name: "site name",
         locale: "ja_JP"
       },
       twitter: {
         card: 'summary'
-        image: image_url("スクリーンショット.png")
+        #image: image_url("スクリーンショット.png")
 	  },
       fb: {
-        app_id: '465581603975903'    #ご自身のfacebookのapplication IDを設定
+        app_id: '465581603975903' 
       }
     }
   end
